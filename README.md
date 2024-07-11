@@ -1,4 +1,5 @@
 # Challenge Foro Hub
+![Badge-Spring](https://github.com/JorgeRandomGamer/ForoHub/assets/45271115/746510d7-d828-4c1c-9412-75f7313d30c2)
 
 ## Descripción
 
