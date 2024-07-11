@@ -30,7 +30,7 @@ public class TopicoController {
     @Transactional
     public ResponseEntity<RespuestaTopicoDTO> registrarTopico(@RequestBody @Valid RegistroTopicoDTO datosRegistroTopico,
                                                               UriComponentsBuilder uriComponentsBuilder) {
-
+        // Se verifica que exista el autor y el curso
         Optional<Usuario> autor = usuarioRepository.findById(datosRegistroTopico.idUsuario());
         Optional<Curso> curso = cursoRepository.findByNombre(datosRegistroTopico.nombreCurso());
 
