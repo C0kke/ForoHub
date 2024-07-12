@@ -18,14 +18,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/login")
-@Tag(name = "Autenticacion", description = "obtiene el token para el usuario asignado que da acceso al resto de endpoint")
 public class AutenticacionController {
 
-    @Autowired private AuthenticationManager authenticationManager;
-    @Autowired private TokenService tokenService;
+    @Autowired
+    private AuthenticationManager authenticationManager;
+    @Autowired
+    private TokenService tokenService;
 
     @PostMapping
-    public ResponseEntity autenticarUsuario(@RequestBody @Valid AutenticacionUsuarioDTO datos) {
+    public ResponseEntity<JWTTokenDTO> autenticarUsuario(@RequestBody @Valid AutenticacionUsuarioDTO datos) {
         Authentication authToken = new UsernamePasswordAuthenticationToken(datos.correo(), datos.contrasena());
         var usuarioAutenticado = authenticationManager.authenticate(authToken);
         var JWTtoken = tokenService.generarToken((Usuario) usuarioAutenticado.getPrincipal());

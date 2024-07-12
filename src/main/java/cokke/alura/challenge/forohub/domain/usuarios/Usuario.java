@@ -28,6 +28,23 @@ public class Usuario implements UserDetails {
     private String correo;
     private String contrasena;
 
+    public Usuario(String nombre, String correo, String contrasena) {
+        this.nombre = nombre;
+        this.correo = correo;
+        this.contrasena = contrasena;
+    }
+
+    public void actualizarDatos(String nombre, String correo, String contrasena) {
+        if (nombre != "") {
+            this.nombre = nombre;
+        }
+        if (correo != "") {
+            this.correo = correo;
+        }
+        if (contrasena != ""){
+            this.contrasena = contrasena;
+        }
+    }
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority("ROLE_USER"));

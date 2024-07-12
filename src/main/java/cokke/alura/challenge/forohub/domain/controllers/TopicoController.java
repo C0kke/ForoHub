@@ -22,9 +22,12 @@ import java.util.Optional;
 @RequestMapping("/topicos")
 public class TopicoController {
 
-    @Autowired private TopicoRepository topicoRepository;
-    @Autowired private UsuarioRepository usuarioRepository;
-    @Autowired private CursoRepository cursoRepository;
+    @Autowired
+    private TopicoRepository topicoRepository;
+    @Autowired
+    private UsuarioRepository usuarioRepository;
+    @Autowired
+    private CursoRepository cursoRepository;
 
     @PostMapping
     @Transactional
@@ -80,7 +83,7 @@ public class TopicoController {
 
     @DeleteMapping("/{id}")
     @Transactional
-    public ResponseEntity eliminarTopico(@PathVariable Long id) {
+    public ResponseEntity<Topico> eliminarTopico(@PathVariable Long id) {
         Topico topico = topicoRepository.getReferenceById(id);
         if (topico != null) {
             topicoRepository.deleteById(id);

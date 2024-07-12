@@ -21,13 +21,12 @@ public class TokenService {
 
     public String generarToken(Usuario usuario) {
         try {
-            Algorithm algorithm = Algorithm.HMAC256(apiSecret);
             return JWT.create()
                     .withIssuer("ForoHub")
                     .withSubject(usuario.getCorreo())
                     .withClaim("id", usuario.getId())
                     .withExpiresAt(generarFechaExpiracion())
-                    .sign(algorithm);
+                    .sign(Algorithm.HMAC256(apiSecret));
         } catch (JWTCreationException exception){
             throw new RuntimeException();
         }
