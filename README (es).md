@@ -16,6 +16,12 @@ Esta API permite a los usuarios interactuar con un foro de la siguiente manera:
 
 -Enviar Mensajes y Publicar Tópicos: Los usuarios pueden crear tópicos para comenzar una discusión y enviar respuestas a estos tópicos.
 
+-Posee una documentación en swagger dentro del sistema donde se puede probar el login y las demás funcionalidades (con ayuda del bearer del login)
+
+![image](https://github.com/user-attachments/assets/08ac0c74-20a1-491c-9a9d-d02b922d1cad)
+![image](https://github.com/user-attachments/assets/bfb95994-65dc-48fd-9a03-e8e29de7cbf5)
+
+
 
 
 
