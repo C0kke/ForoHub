@@ -4,6 +4,7 @@ import cokke.alura.challenge.forohub.domain.respuestas.*;
 import cokke.alura.challenge.forohub.domain.topicos.*;
 import cokke.alura.challenge.forohub.domain.usuarios.Usuario;
 import cokke.alura.challenge.forohub.domain.usuarios.UsuarioRepository;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/respuestas")
+@SecurityRequirement(name = "bearer-key")
 public class RespuestaController {
 
     @Autowired

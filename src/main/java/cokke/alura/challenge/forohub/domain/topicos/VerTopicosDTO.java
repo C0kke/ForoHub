@@ -8,7 +8,7 @@ public record VerTopicosDTO(
         String mensaje,
         Date fechaCreacion,
         String estado,
-        String autor,
+        String usuario,
         String curso
 ) {
 
